@@ -1,0 +1,14 @@
+---
+  - name: awx-project centos7
+    hosts: localhost
+    tasks:
+      - name: awx-project centos 7
+      - ec2:
+          aws_region: eu-west-1
+          instance_type: t2.micro
+          image: ami-04cf43aca3e6f3de3
+          count: 3
+          vpc_subnet_id: subnet-cdbe6d97
+          assign_public_ip: yes
+          group: default 
+          key_name: awx
